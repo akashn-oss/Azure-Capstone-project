@@ -275,7 +275,7 @@ Steps:
 
 # Step 10: Connect to the Virtual Machine
 
-The VM can be accessed using Basiton.
+The VM can be accessed using Bastion.
 
 <img width="1113" height="614" alt="Screenshot 2026-03-10 093417" src="https://github.com/user-attachments/assets/02ddcf8d-2704-455a-8d4e-7ea26a8715c8" />
 
@@ -327,16 +327,11 @@ This allows the VM to read, write, and manage blobs.
 
 Using Azure CLI, the VM can list and manage uploaded files.
 
-List blobs:
+List blobs:az storage blob list --account-name capstoneblobproject  --container-name uploads --auth-mode login --output table
 
-az storage blob list --account-name capstoneblobproject  --container-name uploads --auth-mode login --output table
+Download blob:az storage blob download  --account-name capstoneblobproject  --container-name uploads --name filename.pdf --file filename.pdf
 
-Download blob:
-
-az storage blob download  --account-name capstoneblobproject  --container-name uploads --name filename.pdf --file filename.pdf
-
-Delete blob:
-az storage blob delete --account-name capstoneblobproject  --container-name uploads --name filename.pdf
+Delete blob:az storage blob delete --account-name capstoneblobproject  --container-name uploads --name filename.pdf
 
 This allows administrators to monitor and manage stored files.
 
